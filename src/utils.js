@@ -32,3 +32,16 @@ async function getRandomHeroes(url, count) {
 		.filter((result) => result.status === "fulfilled")
 		.map((result) => result.value);
 }
+
+async function getAllHeroes(url) {
+	try {
+		const response = await fetch(`${url}/all.json`);
+		if (!response.ok) {
+			throw new Error(`Response status: ${response.status}`);
+		}
+		const result = await response.json();
+		return result;
+	} catch (error) {
+		console.error(error);
+	}
+}
