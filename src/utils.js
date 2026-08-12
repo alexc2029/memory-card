@@ -23,7 +23,7 @@ async function getHero(url, id) {
 	}
 }
 
-async function getHeroes(url, count) {
+async function getRandomHeroes(url, count) {
 	const id_array = getRandomIds(count);
 	const heroResults = await Promise.allSettled(
 		id_array.map((id) => getHero(url, id)),
@@ -32,5 +32,3 @@ async function getHeroes(url, count) {
 		.filter((result) => result.status === "fulfilled")
 		.map((result) => result.value);
 }
-
-export { getHeroes };
