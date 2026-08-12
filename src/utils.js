@@ -7,7 +7,6 @@ function getRandomIds(count) {
 	for (let i = 0; i < count; i++) {
 		randomIds.push(getRandomInt(1, 731));
 	}
-	console.log(randomIds);
 	return randomIds;
 }
 
