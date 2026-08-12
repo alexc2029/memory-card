@@ -5,7 +5,11 @@ function getRandomInt(min, max) {
 function getRandomIndexes(min, max, count) {
 	const randomIndexes = [];
 	for (let i = 0; i < count; i++) {
-		randomIndexes.push(getRandomInt(min, max));
+		let index;
+		do {
+			index = getRandomInt(min, max);
+		} while (randomIndexes.includes(index));
+		randomIndexes.push(index);
 	}
 	return randomIndexes;
 }
