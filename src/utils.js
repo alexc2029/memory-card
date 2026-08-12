@@ -2,6 +2,14 @@ function getRandomInt(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function getRandomIndexes(min, max, count) {
+	const randomIndexes = [];
+	for (let i = 0; i < count; i++) {
+		randomIndexes.push(getRandomInt(min, max));
+	}
+	return randomIndexes;
+}
+
 function getRandomIds(count) {
 	const randomIds = [];
 	for (let i = 0; i < count; i++) {
