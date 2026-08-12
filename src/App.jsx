@@ -1,9 +1,9 @@
 import "./App.css";
-import { getHeroes } from "./utils";
+import { getAllHeroes, getRandomHeroes, trimHeroes } from "./utils.js";
 
 const HERO_COUNT = 12;
 const url = "https://akabab.github.io/superhero-api/api";
-const heroes = await getHeroes(url, HERO_COUNT);
+const heroes = trimHeroes(getRandomHeroes(await getAllHeroes(url), HERO_COUNT));
 
 function App() {
 	console.log(heroes);
