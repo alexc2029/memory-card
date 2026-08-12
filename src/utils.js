@@ -10,37 +10,6 @@ function getRandomIndexes(min, max, count) {
 	return randomIndexes;
 }
 
-function getRandomIds(count) {
-	const randomIds = [];
-	for (let i = 0; i < count; i++) {
-		randomIds.push(getRandomInt(1, 731));
-	}
-	return randomIds;
-}
-
-async function getHero(url, id) {
-	try {
-		const heroResponse = await fetch(`${url}/id/${id}.json`);
-		if (!heroResponse.ok) {
-			throw new Error(`Response status: ${heroResponse.status}`);
-		}
-		const heroResult = await heroResponse.json();
-		return heroResult;
-	} catch (error) {
-		console.error(error);
-	}
-}
-
-async function requestRandomHeroes(url, count) {
-	const id_array = getRandomIds(count);
-	const heroResults = await Promise.allSettled(
-		id_array.map((id) => getHero(url, id)),
-	);
-	return heroResults
-		.filter((result) => result.status === "fulfilled")
-		.map((result) => result.value);
-}
-
 async function getAllHeroes(url) {
 	try {
 		const response = await fetch(`${url}/all.json`);
