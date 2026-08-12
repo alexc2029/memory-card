@@ -7,7 +7,11 @@ function HeroGrid({ heroes }) {
 	return (
 		<div className="hero-grid">
 			{heroes.map((hero) => (
-				<HeroCard name={hero.name} imageUrl={hero.image} />
+				<HeroCard
+					key={hero.id}
+					name={hero.name}
+					imageUrl={hero.image}
+				/>
 			))}
 		</div>
 	);
