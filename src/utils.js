@@ -45,3 +45,11 @@ async function getAllHeroes(url) {
 		console.error(error);
 	}
 }
+
+function trimHeroes(heroes) {
+	return heroes.map((hero) => {
+		return { name: hero.name, images: hero.images.sm };
+	});
+}
+
+export { getAllHeroes, trimHeroes };
