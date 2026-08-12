@@ -54,10 +54,19 @@ async function getAllHeroes(url) {
 	}
 }
 
+function getRandomHeroes(heroes, count) {
+	const randomIndexes = getRandomIndexes(0, heroes.length - 1, count);
+	const randomHeroes = [];
+	for (let i = 0; i < count; i++) {
+		randomHeroes.push(heroes[randomIndexes[i]]);
+	}
+	return randomHeroes;
+}
+
 function trimHeroes(heroes) {
 	return heroes.map((hero) => {
 		return { name: hero.name, images: hero.images.sm };
 	});
 }
 
-export { getAllHeroes, trimHeroes };
+export { getAllHeroes, trimHeroes, getRandomHeroes };
