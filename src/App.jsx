@@ -1,5 +1,6 @@
 import "./App.css";
 import HeroGrid from "./components/HeroGrid.jsx";
+import Header from "./components/Header.jsx";
 import { getAllHeroes, getRandomHeroes, trimHeroes } from "./utils.js";
 
 const HERO_COUNT = 12;
@@ -9,6 +10,7 @@ const heroes = trimHeroes(getRandomHeroes(await getAllHeroes(url), HERO_COUNT));
 function App() {
 	return (
 		<>
+			<Header />
 			<HeroGrid heroes={heroes} />
 		</>
 	);
