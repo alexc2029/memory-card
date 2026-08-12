@@ -1,16 +1,10 @@
-# React + Vite
+# Superhero Memory Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The main goal of this project is to implement the react concepts I learned so far by using hooks to manage and utilize state while fetching and using data from an external API.
 
-Currently, two official plugins are available:
+API Link: https://github.com/akabab/superhero-api/tree/master/api
+(open source wrapper of the Superhero API that doesn't require auth)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This API only allows you to handpick heroes by id, otherwise you have to request the entire json with all heroes. To make it more interesting, my intention was to randomly make a number of requests for random ids (1-731) which would allow me to play around a bit more as opposed to getting the whole json and working on that. However, it turns out that the API is missing maybe hundreds of ids, so my randomization function had a decent chance of returning an id for which the request would fail.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+I decided to pivot to requesting the entire json and then manipulating that as I see fit, since there was no way I could think of to reliably make, say, 12 requests that would hit a valid id, even if I implemented retries.
