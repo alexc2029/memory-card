@@ -1,5 +1,6 @@
 import "./HeroCard";
 import HeroCard from "./HeroCard";
+import "./HeroGrid.css";
 
 function HeroGrid({ heroes }) {
 	console.log(heroes);

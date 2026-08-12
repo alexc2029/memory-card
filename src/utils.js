@@ -34,7 +34,7 @@ function getRandomHeroes(heroes, count) {
 
 function trimHeroes(heroes) {
 	return heroes.map((hero) => {
-		return { name: hero.name, image: hero.images.sm };
+		return { name: hero.name, image: hero.images.lg };
 	});
 }
 
