@@ -1,4 +1,4 @@
-function Header() {
+function Header({ score }) {
 	return (
 		<div className="header-container">
 			<div className="left-header-container">
@@ -6,6 +6,9 @@ function Header() {
 				<span className="header-subtext">
 					Try to click on every image only once!
 				</span>
+			</div>
+			<div className="right-header-container">
+				<span className="score">{score}</span>
 			</div>
 		</div>
 	);

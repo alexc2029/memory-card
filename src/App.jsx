@@ -18,7 +18,7 @@ function App() {
 	};
 	return (
 		<>
-			<Header />
+			<Header score={score} />
 			<HeroGrid
 				heroes={heroes}
 				onAlreadyClicked={resetScore}
