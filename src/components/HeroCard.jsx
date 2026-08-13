@@ -1,9 +1,14 @@
 import "./HeroCard.css";
 import { useState } from "react";
 
-function HeroCard({ name, imageUrl }) {
+function HeroCard({ name, imageUrl, onAlreadyClicked, onNotClicked }) {
 	const [clicked, setClicked] = useState(false);
 	const handleClick = () => {
+		if (clicked) {
+			onAlreadyClicked();
+		} else {
+			onNotClicked();
+		}
 		setClicked(true);
 	};
 	return (
