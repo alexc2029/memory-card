@@ -25,3 +25,11 @@
 .left-header-container {
 	gap: 20px;
 }
+
+.right-header-container {
+	background-color: var(--card-bg);
+	border: 1px solid var(--border-color);
+	border-radius: 8px;
+	height: fit-content;
+	padding: 8px 12px;
+}
