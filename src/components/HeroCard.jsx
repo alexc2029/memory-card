@@ -4,6 +4,7 @@ import { useState } from "react";
 function HeroCard({ name, imageUrl, onAlreadyClicked, onNotClicked }) {
 	const [clicked, setClicked] = useState(false);
 	const handleClick = () => {
+		window.scrollTo(0, 0);
 		if (clicked) {
 			onAlreadyClicked();
 		} else {
