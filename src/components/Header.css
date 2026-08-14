@@ -4,12 +4,15 @@
 	margin-bottom: 40px;
 	& h1 {
 		color: var(--primary-text-color);
+		font-family: "Oswald", Arial, sans-serif;
+		font-weight: 700;
 	}
 	& span {
 		color: var(--secondary-text-color);
 	}
 	& span.score-digit {
 		color: var(--accent-color);
+		font-weight: 600;
 	}
 }
 

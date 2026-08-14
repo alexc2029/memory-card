@@ -71,4 +71,5 @@ ul {
 body {
 	background-color: var(--primary-bg-color);
 	color: var(--primary-text-color);
+	font-family: "Montserrat", Helvetica, sans-serif;
 }
