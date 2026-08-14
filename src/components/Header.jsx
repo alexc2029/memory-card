@@ -1,4 +1,4 @@
-function Header({ score }) {
+function Header({ score, bestScore }) {
 	return (
 		<div className="header-container">
 			<div className="left-header-container">
@@ -8,7 +8,8 @@ function Header({ score }) {
 				</span>
 			</div>
 			<div className="right-header-container">
-				<span className="score">{score}</span>
+				<span className="score">Score: {score}</span>
+				<span className="score">Best score: {bestScore}</span>
 			</div>
 		</div>
 	);
