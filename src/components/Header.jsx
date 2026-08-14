@@ -9,6 +9,10 @@ function Header({ score, bestScore }) {
 					Get points by clicking on a card but don't click on any more
 					than once!
 				</span>
+				<span className="header-subtext">
+					{" "}
+					Reload the page to get different heroes!
+				</span>
 			</div>
 			<div className="right-header-container">
 				<span className="score">
