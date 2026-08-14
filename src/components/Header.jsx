@@ -6,7 +6,8 @@ function Header({ score, bestScore }) {
 			<div className="left-header-container">
 				<h1>Superhero Memory Game</h1>
 				<span className="header-subtext">
-					Try to click on every image only once!
+					Get points by clicking on a card but don't click on any more
+					than once!
 				</span>
 			</div>
 			<div className="right-header-container">
