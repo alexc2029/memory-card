@@ -1,3 +1,5 @@
+import "./Header.css";
+
 function Header({ score, bestScore }) {
 	return (
 		<div className="header-container">
