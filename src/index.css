@@ -67,3 +67,8 @@ ul {
 	--primary-text-color: #ffffff;
 	--secondary-text-color: #9db2ce;
 }
+
+body {
+	background-color: var(--primary-bg-color);
+	color: var(--primary-text-color);
+}

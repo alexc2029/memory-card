@@ -1,6 +1,24 @@
 .hero-card {
 	display: block;
+	background-color: var(--card-bg);
+	border: 1px solid;
+	border-color: var(--border-color);
+	border-radius: 8px;
+	padding: 0;
+	overflow: hidden;
 	& img {
 		width: 100%;
 	}
+	& h2 {
+		color: var(--primary-text-color);
+	}
+	box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.hero-card:hover {
+	cursor: pointer;
+	border-color: var(--accent-color);
+	box-shadow:
+		0px 8px 20px rgba(0, 0, 0, 0.6),
+		0px 0px 15px rgba(72, 202, 228, 0.35);
 }

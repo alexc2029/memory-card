@@ -2,6 +2,15 @@
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 40px;
+	& h1 {
+		color: var(--primary-text-color);
+	}
+	& span {
+		color: var(--secondary-text-color);
+	}
+	& span.score-digit {
+		color: var(--accent-color);
+	}
 }
 
 .left-header-container,

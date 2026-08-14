@@ -10,8 +10,12 @@ function Header({ score, bestScore }) {
 				</span>
 			</div>
 			<div className="right-header-container">
-				<span className="score">Score: {score}</span>
-				<span className="score">Best score: {bestScore}</span>
+				<span className="score">
+					Score: <span className="score-digit">{score}</span>
+				</span>
+				<span className="score">
+					Best score: <span className="score-digit">{bestScore}</span>
+				</span>
 			</div>
 		</div>
 	);
