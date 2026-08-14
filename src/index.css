@@ -46,3 +46,24 @@ h6 {
 ul {
 	list-style-type: none;
 }
+
+@font-face {
+	font-family: "Oswald";
+	src: url("./assets/Oswald-VariableFont_wght.ttf");
+	font-weight: 100 900;
+}
+
+@font-face {
+	font-family: "Montserrat";
+	src: url("./assets/Montserrat-VariableFont_wght.ttf");
+	font-weight: 100 900;
+}
+
+:root {
+	--primary-bg-color: #0b132b;
+	--card-bg: #1c2541;
+	--border-color: #3a506b;
+	--accent-color: #48cae4;
+	--primary-text-color: #ffffff;
+	--secondary-text-color: #9db2ce;
+}
