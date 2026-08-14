@@ -2,7 +2,7 @@ import "./App.css";
 import HeroGrid from "./components/HeroGrid.jsx";
 import Header from "./components/Header.jsx";
 import { getAllHeroes, getRandomHeroes, trimHeroes } from "./utils.js";
-import { use, useState } from "react";
+import { useState } from "react";
 
 const HERO_COUNT = 12;
 const url = "https://akabab.github.io/superhero-api/api";
