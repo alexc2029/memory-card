@@ -1,5 +1,7 @@
 # Superhero Memory Game
 
+[**Play it live**](https://superhero-memory-game.netlify.app/)
+
 The main goal of this project is to implement the react concepts I learned so far by using hooks to manage and utilize state while fetching and using data from an external API.
 
 API Link: https://github.com/akabab/superhero-api/tree/master/api
