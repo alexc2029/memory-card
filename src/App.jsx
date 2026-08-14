@@ -10,17 +10,20 @@ const heroes = trimHeroes(getRandomHeroes(await getAllHeroes(url), HERO_COUNT));
 
 function App() {
 	const [score, setScore] = useState(0);
+	const [resetKey, setResetKey] = useState(0);
 	const increaseScore = () => {
 		setScore(score + 1);
 	};
 	const resetScore = () => {
 		setScore(0);
+		setResetKey((prevKey) => prevKey + 1);
 	};
 	return (
 		<>
 			<Header score={score} />
 			<HeroGrid
 				heroes={heroes}
+				resetKey={resetKey}
 				onAlreadyClicked={resetScore}
 				onNotClicked={increaseScore}
 			/>
