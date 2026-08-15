@@ -2,7 +2,7 @@ import "./HeroCard";
 import HeroCard from "./HeroCard";
 import "./HeroGrid.css";
 
-function HeroGrid({ heroes, resetKey, onAlreadyClicked, onNotClicked }) {
+function HeroGrid({ heroes, resetKey, onClick }) {
 	return (
 		<div className="hero-grid">
 			{heroes.map((hero) => (
@@ -10,8 +10,7 @@ function HeroGrid({ heroes, resetKey, onAlreadyClicked, onNotClicked }) {
 					key={hero.id + resetKey}
 					name={hero.name}
 					imageUrl={hero.image}
-					onAlreadyClicked={onAlreadyClicked}
-					onNotClicked={onNotClicked}
+					onClick={onClick}
 				/>
 			))}
 		</div>

@@ -24,24 +24,13 @@ function App() {
 			setScore(score + 1);
 		}
 	};
-	const increaseScore = () => {
-		setScore(score + 1);
-		setShuffledHeroes(shuffle(shuffledHeroes));
-	};
-	const resetScore = () => {
-		if (score > bestScore) setBestScore(score);
-		setScore(0);
-		setResetKey((prevKey) => prevKey + 1);
-		setShuffledHeroes(shuffle(shuffledHeroes));
-	};
 	return (
 		<>
 			<Header score={score} bestScore={bestScore} />
 			<HeroGrid
 				heroes={shuffledHeroes}
 				resetKey={resetKey}
-				onAlreadyClicked={resetScore}
-				onNotClicked={increaseScore}
+				onClick={updateScore}
 			/>
 		</>
 	);
