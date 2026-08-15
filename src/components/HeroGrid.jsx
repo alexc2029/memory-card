@@ -1,4 +1,3 @@
-import "./HeroCard";
 import HeroCard from "./HeroCard";
 import "./HeroGrid.css";
 
