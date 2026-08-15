@@ -1,10 +1,8 @@
 import "./HeroCard";
 import HeroCard from "./HeroCard";
 import "./HeroGrid.css";
-//import { shuffle } from "../utils";
 
 function HeroGrid({ heroes, resetKey, onAlreadyClicked, onNotClicked }) {
-	//const shuffledHeroes = shuffle(heroes);
 	return (
 		<div className="hero-grid">
 			{heroes.map((hero) => (

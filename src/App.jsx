@@ -13,6 +13,17 @@ function App() {
 	const [bestScore, setBestScore] = useState(0);
 	const [resetKey, setResetKey] = useState(0);
 	const [shuffledHeroes, setShuffledHeroes] = useState(heroes);
+	const updateScore = (wasAlreadyClicked) => {
+		setShuffledHeroes(shuffle(shuffledHeroes));
+		if (wasAlreadyClicked) {
+			if (score > bestScore) setBestScore(score);
+			setScore(0);
+			setResetKey((prevKey) => prevKey + 1);
+			setShuffledHeroes(shuffle(shuffledHeroes));
+		} else {
+			setScore(score + 1);
+		}
+	};
 	const increaseScore = () => {
 		setScore(score + 1);
 		setShuffledHeroes(shuffle(shuffledHeroes));
