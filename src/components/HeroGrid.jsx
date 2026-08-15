@@ -1,12 +1,13 @@
 import HeroCard from "./HeroCard";
 import "./HeroGrid.css";
 
-function HeroGrid({ heroes, resetKey, onClick }) {
+function HeroGrid({ heroes, onClick }) {
 	return (
 		<div className="hero-grid">
 			{heroes.map((hero) => (
 				<HeroCard
-					key={hero.id + resetKey}
+					key={hero.id}
+					id={hero.id}
 					name={hero.name}
 					imageUrl={hero.image}
 					onClick={onClick}

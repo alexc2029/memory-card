@@ -21,13 +21,14 @@ function App() {
 	}, []);
 	const [score, setScore] = useState(0);
 	const [bestScore, setBestScore] = useState(0);
-	const [resetKey, setResetKey] = useState(0);
-	const updateScore = (wasAlreadyClicked) => {
+	const [clickedIds, setClickedIds] = useState([]);
+	const handleCardClick = (id) => {
 		setHeroes(shuffle(heroes));
-		if (wasAlreadyClicked) {
+		if (clickedIds.includes(id)) {
 			setScore(0);
-			setResetKey((prevKey) => prevKey + 1);
+			setClickedIds([]);
 		} else {
+			setClickedIds([...clickedIds, id]);
 			const newScore = score + 1; // to account for state delay
 			setScore(newScore);
 			if (newScore > bestScore) setBestScore(newScore);
@@ -36,11 +37,7 @@ function App() {
 	return (
 		<>
 			<Header score={score} bestScore={bestScore} />
-			<HeroGrid
-				heroes={heroes}
-				resetKey={resetKey}
-				onClick={updateScore}
-			/>
+			<HeroGrid heroes={heroes} onClick={handleCardClick} />
 		</>
 	);
 }

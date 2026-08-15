@@ -1,12 +1,9 @@
 import "./HeroCard.css";
-import { useState } from "react";
 
-function HeroCard({ name, imageUrl, onClick }) {
-	const [clicked, setClicked] = useState(false);
+function HeroCard({ id, name, imageUrl, onClick }) {
 	const handleClick = () => {
 		window.scrollTo(0, 0);
-		onClick(clicked);
-		setClicked(true);
+		onClick(id);
 	};
 	return (
 		<button type="button" className="hero-card" onClick={handleClick}>
