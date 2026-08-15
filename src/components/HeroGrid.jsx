@@ -1,13 +1,13 @@
 import "./HeroCard";
 import HeroCard from "./HeroCard";
 import "./HeroGrid.css";
-import { shuffle } from "../utils";
+//import { shuffle } from "../utils";
 
 function HeroGrid({ heroes, resetKey, onAlreadyClicked, onNotClicked }) {
-	const shuffledHeroes = shuffle(heroes);
+	//const shuffledHeroes = shuffle(heroes);
 	return (
 		<div className="hero-grid">
-			{shuffledHeroes.map((hero) => (
+			{heroes.map((hero) => (
 				<HeroCard
 					key={hero.id + resetKey}
 					name={hero.name}
