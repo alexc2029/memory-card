@@ -10,7 +10,8 @@
 	& span {
 		color: var(--secondary-text-color);
 	}
-	& span.score-digit {
+	& span.score-digit,
+	span#game-won {
 		color: var(--accent-color);
 		font-weight: 600;
 	}

@@ -21,11 +21,11 @@ function App() {
 	const [score, setScore] = useState(0);
 	const [bestScore, setBestScore] = useState(0);
 	const [clickedIds, setClickedIds] = useState([]);
+	const [gameWon, setGameWon] = useState(false);
 	const handleCardClick = (id) => {
 		setHeroes(shuffle(heroes));
 		if (clickedIds.includes(id)) {
-			setClickedIds([]);
-			setScore(0);
+			resetScoreAndClicks();
 		} else {
 			setClickedIds([...clickedIds, id]);
 			handleScoreIncrease();
@@ -33,7 +33,11 @@ function App() {
 	};
 	return (
 		<>
-			<Header score={score} bestScore={bestScore} />
+			<Header
+				score={score}
+				bestScore={bestScore}
+				displayGameWon={gameWon}
+			/>
 			<HeroGrid heroes={heroes} onClick={handleCardClick} />
 		</>
 	);
@@ -42,9 +46,17 @@ function App() {
 		const newScore = score + 1; // to account for state delay
 		setScore(newScore);
 		if (newScore > bestScore) setBestScore(newScore);
+		if (newScore === HERO_COUNT) {
+			setGameWon(true);
+			resetScoreAndClicks();
+		}
 	}
 	function setRandomHeroes(currentAllHeroes) {
 		setHeroes(trimHeroes(getRandomHeroes(currentAllHeroes, HERO_COUNT)));
+	}
+	function resetScoreAndClicks() {
+		setClickedIds([]);
+		setScore(0);
 	}
 }
 

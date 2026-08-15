@@ -1,6 +1,6 @@
 import "./Header.css";
 
-function Header({ score, bestScore }) {
+function Header({ score, bestScore, displayGameWon }) {
 	return (
 		<div className="header-container">
 			<div className="left-header-container">
@@ -21,6 +21,7 @@ function Header({ score, bestScore }) {
 				<span className="score">
 					Best score: <span className="score-digit">{bestScore}</span>
 				</span>
+				{displayGameWon && <span id="game-won">You win!</span>}
 			</div>
 		</div>
 	);
