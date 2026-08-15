@@ -19,7 +19,6 @@ function App() {
 			if (score > bestScore) setBestScore(score);
 			setScore(0);
 			setResetKey((prevKey) => prevKey + 1);
-			setShuffledHeroes(shuffle(shuffledHeroes));
 		} else {
 			setScore(score + 1);
 		}
