@@ -25,11 +25,12 @@ function App() {
 	const updateScore = (wasAlreadyClicked) => {
 		setHeroes(shuffle(heroes));
 		if (wasAlreadyClicked) {
-			if (score > bestScore) setBestScore(score);
 			setScore(0);
 			setResetKey((prevKey) => prevKey + 1);
 		} else {
-			setScore(score + 1);
+			const newScore = score + 1; // to account for state delay
+			setScore(newScore);
+			if (newScore > bestScore) setBestScore(newScore);
 		}
 	};
 	return (
