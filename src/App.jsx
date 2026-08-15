@@ -25,13 +25,11 @@ function App() {
 	const handleCardClick = (id) => {
 		setHeroes(shuffle(heroes));
 		if (clickedIds.includes(id)) {
-			setScore(0);
 			setClickedIds([]);
+			setScore(0);
 		} else {
 			setClickedIds([...clickedIds, id]);
-			const newScore = score + 1; // to account for state delay
-			setScore(newScore);
-			if (newScore > bestScore) setBestScore(newScore);
+			handleScoreIncrease();
 		}
 	};
 	return (
@@ -40,6 +38,12 @@ function App() {
 			<HeroGrid heroes={heroes} onClick={handleCardClick} />
 		</>
 	);
+
+	function handleScoreIncrease() {
+		const newScore = score + 1; // to account for state delay
+		setScore(newScore);
+		if (newScore > bestScore) setBestScore(newScore);
+	}
 }
 
 export default App;
