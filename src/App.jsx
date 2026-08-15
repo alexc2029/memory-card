@@ -8,16 +8,15 @@ const HERO_COUNT = 12;
 const url = "https://akabab.github.io/superhero-api/api";
 
 function App() {
+	const [allHeroes, setAllHeroes] = useState([]);
 	const [heroes, setHeroes] = useState([]);
 	useEffect(() => {
-		async function fetchNewHeroes() {
-			setHeroes(
-				trimHeroes(
-					getRandomHeroes(await getAllHeroes(url), HERO_COUNT),
-				),
-			);
+		async function fetchHeroes() {
+			const currentAllHeroes = await getAllHeroes(url);
+			setAllHeroes(currentAllHeroes);
+			setRandomHeroes(currentAllHeroes);
 		}
-		fetchNewHeroes();
+		fetchHeroes();
 	}, []);
 	const [score, setScore] = useState(0);
 	const [bestScore, setBestScore] = useState(0);
@@ -43,6 +42,9 @@ function App() {
 		const newScore = score + 1; // to account for state delay
 		setScore(newScore);
 		if (newScore > bestScore) setBestScore(newScore);
+	}
+	function setRandomHeroes(currentAllHeroes) {
+		setHeroes(trimHeroes(getRandomHeroes(currentAllHeroes, HERO_COUNT)));
 	}
 }
 
