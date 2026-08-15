@@ -18,7 +18,7 @@ function App() {
 		}
 		fetchHeroes();
 	}, []);
-	const [score, setScore] = useState(0);
+	const [score, setScore] = useState(11);
 	const [bestScore, setBestScore] = useState(0);
 	const [clickedIds, setClickedIds] = useState([]);
 	const [gameWon, setGameWon] = useState(false);
@@ -27,6 +27,7 @@ function App() {
 		if (clickedIds.includes(id)) {
 			resetScoreAndClicks();
 		} else {
+			if (score === 0) setGameWon(false);
 			setClickedIds([...clickedIds, id]);
 			handleScoreIncrease();
 		}
