@@ -47,6 +47,7 @@ function App() {
 	function handleNewHeroes() {
 		setRandomHeroes(allHeroes);
 		resetScoreAndClicks();
+		setGameWon(false);
 	}
 
 	function handleScoreIncrease() {
