@@ -10,7 +10,7 @@ function Header({ score, bestScore, displayGameWon, onButtonClick }) {
 					than once!
 				</span>
 				<button onClick={onButtonClick} id="new-heroes-btn">
-					Get new heroes
+					Get New Heroes
 				</button>
 			</div>
 			<div className="right-header-container">
