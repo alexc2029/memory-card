@@ -21,8 +21,12 @@ function App() {
 	const [bestScore, setBestScore] = useState(0);
 	const [clickedIds, setClickedIds] = useState([]);
 	const [gameWon, setGameWon] = useState(false);
+	const [isLocked, setIsLocked] = useState(false);
 	const score = clickedIds.length;
 	const handleCardClick = (id) => {
+		if (isLocked) return;
+		setIsLocked(true);
+
 		setHeroes(shuffle(heroes));
 		if (clickedIds.includes(id)) {
 			resetScoreAndClicks();
@@ -31,6 +35,7 @@ function App() {
 			setClickedIds([...clickedIds, id]);
 			handleScoreIncrease();
 		}
+		setTimeout(() => setIsLocked(false), 200);
 	};
 	return (
 		<>
