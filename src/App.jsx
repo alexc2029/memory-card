@@ -18,7 +18,7 @@ function App() {
 		}
 		fetchHeroes();
 	}, []);
-	const [score, setScore] = useState(11);
+	const [score, setScore] = useState(0);
 	const [bestScore, setBestScore] = useState(0);
 	const [clickedIds, setClickedIds] = useState([]);
 	const [gameWon, setGameWon] = useState(false);
