@@ -18,10 +18,10 @@ function App() {
 		}
 		fetchHeroes();
 	}, []);
-	const [score, setScore] = useState(0);
 	const [bestScore, setBestScore] = useState(0);
 	const [clickedIds, setClickedIds] = useState([]);
 	const [gameWon, setGameWon] = useState(false);
+	const score = clickedIds.length;
 	const handleCardClick = (id) => {
 		setHeroes(shuffle(heroes));
 		if (clickedIds.includes(id)) {
@@ -51,7 +51,6 @@ function App() {
 
 	function handleScoreIncrease() {
 		const newScore = score + 1; // to account for state delay
-		setScore(newScore);
 		if (newScore > bestScore) setBestScore(newScore);
 		if (newScore === HERO_COUNT) {
 			setGameWon(true);
@@ -63,7 +62,6 @@ function App() {
 	}
 	function resetScoreAndClicks() {
 		setClickedIds([]);
-		setScore(0);
 	}
 }
 
