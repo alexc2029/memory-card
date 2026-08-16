@@ -1,6 +1,6 @@
 # Superhero Memory Game
 
-[**Play it live**](https://superhero-memory-game.netlify.app/)
+[**Play it live!**](https://superhero-memory-game.netlify.app/)
 
 The main goal of this project is to implement the react concepts I learned so far by using hooks to manage and utilize state while fetching and using data from an external API.
 
