@@ -38,10 +38,16 @@ function App() {
 				score={score}
 				bestScore={bestScore}
 				displayGameWon={gameWon}
+				onButtonClick={handleNewHeroes}
 			/>
 			<HeroGrid heroes={heroes} onClick={handleCardClick} />
 		</>
 	);
+
+	function handleNewHeroes() {
+		setRandomHeroes(allHeroes);
+		resetScoreAndClicks();
+	}
 
 	function handleScoreIncrease() {
 		const newScore = score + 1; // to account for state delay

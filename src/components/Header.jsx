@@ -1,6 +1,6 @@
 import "./Header.css";
 
-function Header({ score, bestScore, displayGameWon }) {
+function Header({ score, bestScore, displayGameWon, onButtonClick }) {
 	return (
 		<div className="header-container">
 			<div className="left-header-container">
@@ -9,10 +9,9 @@ function Header({ score, bestScore, displayGameWon }) {
 					Get points by clicking on a card but don't click on any more
 					than once!
 				</span>
-				<span className="header-subtext">
-					{" "}
-					Reload the page to get different heroes!
-				</span>
+				<button onClick={onButtonClick} id="new-heroes-btn">
+					Get new heroes
+				</button>
 			</div>
 			<div className="right-header-container">
 				<span className="score">
